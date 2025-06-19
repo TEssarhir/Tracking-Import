@@ -8,9 +8,6 @@ obj/
 *.userosscache
 *.sln.docstates
 
-# Visual Studio Code settings
-.vscode/
-
 # Logs
 *.log
 

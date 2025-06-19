@@ -56,5 +56,51 @@
         }
       }
     },
+    {
+      "label": "dotnet: build",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/server/server.csproj"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": "build",
+      "detail": "Build the .NET server"
+    },
+    {
+      "label": "dotnet: run",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/server/server.csproj"
+      ],
+      "group": "none",
+      "detail": "Run the .NET server"
+    },
+    {
+      "label": "dotnet: add package",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "add",
+        "${workspaceFolder}/server/server.csproj",
+        "package",
+        "${input:packageName}"
+      ],
+      "problemMatcher": [],
+      "group": "none",
+      "detail": "Prompt to add a NuGet package to the .NET server project"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "packageName",
+      "type": "promptString",
+      "description": "Enter the NuGet package name",
+      "default": "Newtonsoft.Json"
+    }
   ]
 }
