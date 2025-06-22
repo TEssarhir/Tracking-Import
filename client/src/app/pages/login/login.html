@@ -1,67 +1,63 @@
-<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-  <div class="card shadow-lg col-12 col-md-6 col-lg-5 col-xl-4 animate-fade-in">
-    <div class="card-body p-5">
-      <h2 class="text-center mb-4 font-semibold">Login</h2>
+<div class="login-page">
+  <div class="login-form">
+    <h2>Login</h2>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            id="email"
-            class="form-control"
-            formControlName="email"
-            [ngClass]="{'is-invalid': submitted && f['email'].errors}"
-            placeholder="Enter your email">
-          @if (submitted && f['email'].errors) {
-            <div class="invalid-feedback">
-              @if (f['email'].errors['required']) {
-                <div>Email is required</div>
-              }
-              @if (f['email'].errors['email']) {
-                <div>Email must be a valid email address</div>
-              }
-            </div>
-          }
-        </div>
-
-        <div class="form-group mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-1">
-            <label for="password" class="form-label mb-0">Password</label>
-            <a href="#" class="text-sm text-primary">Forgot password?</a>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          [ngClass]="{'invalid': submitted && f['email'].errors}"
+          placeholder="Enter your email">
+        @if (submitted && f['email'].errors) {
+          <div class="error-message">
+            @if (f['email'].errors['required']) {
+              <div>Email is required</div>
+            }
+            @if (f['email'].errors['email']) {
+              <div>Email must be a valid email address</div>
+            }
           </div>
-          <input
-            type="password"
-            id="password"
-            class="form-control"
-            formControlName="password"
-            [ngClass]="{'is-invalid': submitted && f['password'].errors}"
-            placeholder="Enter your password">
-          @if (submitted && f['password'].errors) {
-            <div class="invalid-feedback">
-              @if (f['password'].errors['required']) {
-                <div>Password is required</div>
-              }
-            </div>
-          }
-        </div>
-
-        <div class="form-check mb-4">
-          <input type="checkbox" class="form-check-input" id="remember" formControlName="rememberMe">
-          <label class="form-check-label" for="remember">Remember me</label>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100 mb-3">
-          @if (loading) {
-            <span class="spinner spinner-sm spinner-primary me-2"></span>
-          }
-          Login
-        </button>
-      </form>
-
-      <div class="text-center mt-4">
-        <p class="text-sm">Don't have an account? <a href="#" class="text-primary">Register</a></p>
+        }
       </div>
+
+      <div class="form-field">
+        <div class="password-header">
+          <label for="password">Password</label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          [ngClass]="{'invalid': submitted && f['password'].errors}"
+          placeholder="Enter your password">
+        @if (submitted && f['password'].errors) {
+          <div class="error-message">
+            @if (f['password'].errors['required']) {
+              <div>Password is required</div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="remember-option">
+        <input type="checkbox" id="remember" formControlName="rememberMe">
+        <label for="remember">Remember me</label>
+      </div>
+
+      <button type="submit" class="login-button">
+        @if (loading) {
+          <span class="loading-spinner"></span>
+        }
+        Login
+      </button>
+    </form>
+
+    <div class="register-prompt">
+      <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
     </div>
   </div>
 </div>

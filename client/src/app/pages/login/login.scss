@@ -1,4 +1,19 @@
-.animate-fade-in {
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-sm);
+}
+
+.login-form {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-lg);
+  width: 100%;
+  max-width: 420px;
   animation: fadeIn 0.4s ease-in-out forwards;
 }
 
@@ -13,22 +28,119 @@
   }
 }
 
-.spinner {
+.login-form h2 {
+  text-align: center;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.form-field {
+  margin-bottom: var(--space-md);
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.form-field input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-field input.invalid {
+  border-color: var(--danger);
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-xs);
+}
+
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+
+.forgot-link {
+  font-size: var(--font-size-sm);
+  color: var(--primary);
+}
+
+.remember-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.remember-option input {
+  margin-right: var(--space-xs);
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.login-button:hover {
+  background-color: var(--primary-600);
+}
+
+.loading-spinner {
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  vertical-align: -0.125em;
+  margin-right: 0.5rem;
   border: 0.2em solid currentColor;
   border-right-color: transparent;
   border-radius: 50%;
   animation: spinner 0.75s linear infinite;
 }
 
-.spinner-sm {
-  width: 1rem;
-  height: 1rem;
-}
-
 @keyframes spinner {
   to { transform: rotate(360deg); }
+}
+
+.register-prompt {
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+.register-prompt p {
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+}
+
+.register-link {
+  color: var(--primary);
 }
