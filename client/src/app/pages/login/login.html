@@ -13,10 +13,16 @@
             formControlName="email"
             [ngClass]="{'is-invalid': submitted && f['email'].errors}"
             placeholder="Enter your email">
-          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-            <div *ngIf="f['email'].errors?.['required']">Email is required</div>
-            <div *ngIf="f['email'].errors?.['email']">Email must be a valid email address</div>
-          </div>
+          @if (submitted && f['email'].errors) {
+            <div class="invalid-feedback">
+              @if (f['email'].errors['required']) {
+                <div>Email is required</div>
+              }
+              @if (f['email'].errors['email']) {
+                <div>Email must be a valid email address</div>
+              }
+            </div>
+          }
         </div>
 
         <div class="form-group mb-4">
@@ -31,9 +37,13 @@
             formControlName="password"
             [ngClass]="{'is-invalid': submitted && f['password'].errors}"
             placeholder="Enter your password">
-          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-            <div *ngIf="f['password'].errors?.['required']">Password is required</div>
-          </div>
+          @if (submitted && f['password'].errors) {
+            <div class="invalid-feedback">
+              @if (f['password'].errors['required']) {
+                <div>Password is required</div>
+              }
+            </div>
+          }
         </div>
 
         <div class="form-check mb-4">
@@ -42,7 +52,9 @@
         </div>
 
         <button type="submit" class="btn btn-primary w-100 mb-3">
-          <span *ngIf="loading" class="spinner spinner-sm spinner-primary me-2"></span>
+          @if (loading) {
+            <span class="spinner spinner-sm spinner-primary me-2"></span>
+          }
           Login
         </button>
       </form>
