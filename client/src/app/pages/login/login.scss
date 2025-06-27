@@ -1,7 +1,48 @@
-.login-page {
+// Variables
+$fade-duration: 0.4s;
+$spin-duration: 0.75s;
+
+// Mixins
+@mixin flex-center {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+@mixin flex($justify: null, $align: null) {
+  display: flex;
+  @if $justify { justify-content: $justify; }
+  @if $align { align-items: $align; }
+}
+
+@mixin button-base {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+// Login page styles
+.login-page {
+  @include flex-center;
   min-height: 100vh;
   padding: var(--space-sm);
 }
@@ -14,58 +55,47 @@
   padding: var(--space-lg);
   width: 100%;
   max-width: 420px;
-  animation: fadeIn 0.4s ease-in-out forwards;
-}
+  animation: fadeIn $fade-duration ease-in-out forwards;
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  h2 {
+    text-align: center;
+    margin-bottom: var(--space-md);
+    font-weight: 600;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.login-form h2 {
-  text-align: center;
-  margin-bottom: var(--space-md);
-  font-weight: 600;
 }
 
 .form-field {
   margin-bottom: var(--space-md);
-}
 
-.form-field label {
-  display: block;
-  margin-bottom: var(--space-xs);
-  font-weight: 500;
-  color: var(--text-secondary);
-  font-size: var(--font-size-sm);
-}
+  label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+  }
 
-.form-field input {
-  display: block;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-  color: var(--text-primary);
-  background-color: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: var(--radius-md);
-  transition: border-color var(--transition-fast);
-}
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-fast);
 
-.form-field input:focus {
-  outline: none;
-  border-color: var(--primary);
-}
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
 
-.form-field input.invalid {
-  border-color: var(--danger);
+    &.invalid {
+      border-color: var(--danger);
+    }
+  }
 }
 
 .error-message {
@@ -75,9 +105,7 @@
 }
 
 .password-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(space-between, center);
   margin-bottom: var(--space-xs);
 }
 
@@ -87,33 +115,25 @@
 }
 
 .remember-option {
-  display: flex;
-  align-items: center;
+  @include flex(null, center);
   margin-bottom: var(--space-md);
-}
 
-.remember-option input {
-  margin-right: var(--space-xs);
+  input {
+    margin-right: var(--space-xs);
+  }
 }
 
 .login-button {
+  @include button-base;
+  @include flex-center;
   width: 100%;
-  padding: 0.75rem 1.5rem;
   background-color: var(--primary);
   color: white;
-  border: none;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: var(--space-sm);
-  transition: background-color var(--transition-fast);
-}
 
-.login-button:hover {
-  background-color: var(--primary-600);
+  &:hover {
+    background-color: var(--primary-600);
+  }
 }
 
 .loading-spinner {
@@ -124,21 +144,17 @@
   border: 0.2em solid currentColor;
   border-right-color: transparent;
   border-radius: 50%;
-  animation: spinner 0.75s linear infinite;
-}
-
-@keyframes spinner {
-  to { transform: rotate(360deg); }
+  animation: spinner $spin-duration linear infinite;
 }
 
 .register-prompt {
   text-align: center;
   margin-top: var(--space-md);
-}
 
-.register-prompt p {
-  font-size: var(--font-size-sm);
-  margin-bottom: 0;
+  p {
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+  }
 }
 
 .register-link {
