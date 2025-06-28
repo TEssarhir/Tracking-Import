@@ -1,0 +1,206 @@
+// Breakpoint variables
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// Footer component styles
+.app-footer {
+  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+  color: white;
+  padding: var(--space-lg) 0 var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.footer-brand {
+  .footer-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    color: white;
+  }
+
+  .footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-sm);
+    max-width: 300px;
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all var(--transition-fast) var(--ease-in-out);
+
+    &:hover {
+      background-color: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    i {
+      font-size: 16px;
+    }
+  }
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-md);
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer-nav-column {
+  .footer-heading {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: white;
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: var(--space-xs);
+
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color var(--transition-fast) var(--ease-in-out);
+        font-size: var(--font-size-sm);
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .footer-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-xs);
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: var(--space-xs);
+
+  .newsletter-input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-sm);
+
+    &::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .newsletter-button {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: var(--primary);
+    font-weight: 600;
+    border: none;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    cursor: pointer;
+    transition: all var(--transition-fast) var(--ease-in-out);
+    font-size: var(--font-size-sm);
+
+    &:hover {
+      background-color: var(--neutral-100);
+    }
+  }
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: var(--space-lg) 0 var(--space-md);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+
+  .copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-xs);
+  }
+
+  .legal-links {
+    display: flex;
+    gap: var(--space-md);
+
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: var(--font-size-xs);
+      text-decoration: none;
+      transition: color var(--transition-fast) var(--ease-in-out);
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
