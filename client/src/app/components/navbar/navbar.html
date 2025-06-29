@@ -1,0 +1,20 @@
+<nav class="app-navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <a href="/"><img src="svg/logo.svg" alt="Logo"></a>
+    </div>
+    @if (currentRoute === "/" || "/login") {
+      <ul class="navbar-links">
+        <li><a routerLink="#">Home</a></li>
+        <li><a routerLink="#">About</a></li>
+        <li><a routerLink="#">Services</a></li>
+        <li><a routerLink="#">Contact</a></li>
+      </ul>
+    }
+    <div class="navbar-actions">
+      <button class="btn btn-primary" routerLink="/login">Login</button>
+      <button class="btn btn-secondary" routerLink="/register">Register</button>
+    </div>
+  </div>
+
+</nav>
