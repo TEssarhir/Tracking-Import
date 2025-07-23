@@ -39,6 +39,37 @@
       "problemMatcher": [],
       "group": "none",
       "detail": "Prompt to add a NuGet package to the .NET server project"
+    },
+    {
+      "label": "dotnet: ef migrations add",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "ef",
+        "migrations",
+        "add",
+        "${input:migrationName}",
+        "--project",
+        "${workspaceFolder}/server/server.csproj"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": "none",
+      "detail": "Create a new database migration"
+    },
+    {
+      "label": "dotnet: ef database update",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "ef",
+        "database",
+        "update",
+        "--project",
+        "${workspaceFolder}/server/server.csproj"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": "none",
+      "detail": "Apply all pending migrations to the database"
     }
   ],
   "inputs": [
@@ -47,6 +78,12 @@
       "type": "promptString",
       "description": "Enter the NuGet package name",
       "default": "Newtonsoft.Json"
+    },
+    {
+      "id": "migrationName",
+      "type": "promptString",
+      "description": "Enter a name for the migration",
+      "default": "InitialMigration"
     }
   ]
 }
