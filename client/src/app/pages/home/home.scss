@@ -1,0 +1,82 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-xl) 0;
+
+  .bg-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: var(--dot-pattern);
+    background-size: 20px 20px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+
+// Avatar styling for testimonial
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+
+// Animation delays for staggered animations
+.animate-slide-up {
+  opacity: 0;
+  animation: slideInUp var(--animation-duration-md) var(--animation-ease-out) forwards;
+
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+}
+
+// Media queries for responsive adjustments
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-lg) 0;
+
+    h1 {
+      font-size: var(--font-size-3xl);
+    }
+  }
+
+  .display-2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+// Custom icon placeholders (replace these with your actual icon system)
+.icon-chart, .icon-document, .icon-bell {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  opacity: 0.2;
+}
+
+.icon-chart {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 21v-8m3 8v-7m3 7v-5m3 5v-7m3 7v-2m2-3V7c0-1.105-.895-2-2-2h-4l-1-2H6L5 5H2c-1.105 0-2 .895-2 2v10c0 1.105.895 2 2 2h17c1.105 0 2-.895 2-2Z'/%3E%3C/svg%3E");
+}
+
+.icon-document {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2Z'/%3E%3C/svg%3E");
+}
+
+.icon-bell {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6.002 6.002 0 0 0-4-5.659V5a2 2 0 1 0-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 1 1-6 0v-1m6 0H9'/%3E%3C/svg%3E");
+}
