@@ -7,12 +7,12 @@ namespace server.Models
         [Key]
         public int TransporteurId { get; set; }
 
-        public required string Nom { get; set; }
+        public string? Nom { get; set; }
 
-        public required string Coordonees { get; set; }
+        public string? Coordonees { get; set; }
 
-        public required string Capacites { get; set; }
+        public string? Capacites { get; set; }
 
-        public required string Certifications { get; set; }
+        public string? Certifications { get; set; }
     }
 }

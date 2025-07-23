@@ -8,10 +8,10 @@ namespace server.Models
         public int SoumissionId { get; set; }
 
         public int AppelId { get; set; }
-        public required AppelOffre AppelOffre { get; set; }
+        public AppelOffre? AppelOffre { get; set; }
 
         public int FournisseurId { get; set; }
-        public required Fournisseur Fournisseur { get; set; }
+        public Fournisseur? Fournisseur { get; set; }
 
         public decimal Prix { get; set; }
         public int DelaiLivraison { get; set; }

@@ -13,7 +13,7 @@ namespace server.Models
 
         public float Longitude { get; set; }
 
-        public required string Status { get; set; }
+        public string? Status { get; set; }
 
         public DateTime Timestamp { get; set; }
     }

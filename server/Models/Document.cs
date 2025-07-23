@@ -8,14 +8,14 @@ namespace server.Models
         public int DocumentId { get; set; }
 
         [Required]
-        public required string Type { get; set; }
+        public string? Type { get; set; }
 
-        public required string NomFichier { get; set; }
-        public required string UrlFichier { get; set; }
+        public string? NomFichier { get; set; }
+        public string? UrlFichier { get; set; }
 
         public DateTime DateAjout { get; set; } = DateTime.UtcNow;
 
-        public required int UtilisateurId { get; set; }
-        public required Utilisateur Utilisateur { get; set; }
+        public int UtilisateurId { get; set; }
+        public Utilisateur? Utilisateur { get; set; }
     }
 }

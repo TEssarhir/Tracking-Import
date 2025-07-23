@@ -7,7 +7,7 @@ namespace server.Models
         [Key]
         public int RoleId { get; set; }
 
-        public required string Nom { get; set; }
+        public string? Nom { get; set; }
 
         public ICollection<Utilisateur> Utilisateurs { get; set; } = new List<Utilisateur>();
     }

@@ -7,10 +7,10 @@ namespace server.Models
         [Key]
         public int FournisseurId { get; set; }
 
-        public required string Nom { get; set; }
+        public string? Nom { get; set; }
 
-        public required string Catalogues { get; set; }
+        public string? Catalogues { get; set; }
 
-        public required string Accreditations { get; set; }
+        public string? Accreditations { get; set; }
     }
 }

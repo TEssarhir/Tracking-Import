@@ -7,10 +7,10 @@ namespace server.Models
         [Key]
         public int TrackingId { get; set; }
 
-        public required string ConteneurId { get; set; }
+        public string? ConteneurId { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public DateTime DateHeure { get; set; } = DateTime.UtcNow;
-        public required string Statut { get; set; }
+        public string? Statut { get; set; }
     }
 }
