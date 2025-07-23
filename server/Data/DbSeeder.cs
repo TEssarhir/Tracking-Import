@@ -3,7 +3,7 @@ using server.Models;
 
 namespace server.Data
 {
-    public static class DbInitializer
+    public static class DbSeeder
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
