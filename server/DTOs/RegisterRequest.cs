@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using server.Models;
 
 namespace server.DTOs
 {
@@ -16,6 +17,6 @@ namespace server.DTOs
         public string MotDePasse { get; set; } = string.Empty;
 
         [Required]
-        public int RoleId { get; set; }
+        public UserRole Role { get; set; } = UserRole.Client; // Default to Client
     }
 }

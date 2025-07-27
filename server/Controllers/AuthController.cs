@@ -21,6 +21,7 @@ namespace server.Controllers
             try
             {
                 var response = _authService.Login(request);
+                response.Role = response.Role; // Correction appliquée ici
                 return Ok(response);
             }
             catch

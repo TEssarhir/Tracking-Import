@@ -21,5 +21,5 @@ Content-Type: application/json
   "email": "newuser@example.com",
   "motDePasse": "Password123!",
   "nom": "Titi",
-  "prenom": "Yaya",
+  "role": 1
 }

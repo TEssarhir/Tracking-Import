@@ -8,7 +8,6 @@ namespace server.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Utilisateur> Utilisateurs { get; set; }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<Transporteur> Transporteurs { get; set; }
         public DbSet<Transitaire> Transitaires { get; set; }
         public DbSet<Fournisseur> Fournisseurs { get; set; }
@@ -20,12 +19,13 @@ namespace server.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Relation Role - Utilisateur
             modelBuilder.Entity<Utilisateur>()
-                .HasOne(u => u.Role)
-                .WithMany(r => r.Utilisateurs)
-                .HasForeignKey(u => u.RoleId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .Property(u => u.Role)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Utilisateur>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
 
             // Relation AppelOffre - Client
             modelBuilder.Entity<AppelOffre>()

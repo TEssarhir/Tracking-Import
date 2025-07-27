@@ -20,7 +20,6 @@ namespace server.Services
         public LoginResponse Login(LoginRequest request)
         {
             var user = _context.Utilisateurs
-                .Include(u => u.Role)
                 .FirstOrDefault(u => u.Email == request.Email);
 
             if (user == null || user.MotDePasseHash == null || !PasswordHelper.VerifyPassword(user.MotDePasseHash, request.MotDePasse))
@@ -32,7 +31,7 @@ namespace server.Services
             {
                 Token = token,
                 Nom = user.Nom ?? string.Empty,
-                Role = user.Role?.Nom ?? string.Empty,
+                Role = user.Role,
             };
         }
 
@@ -43,8 +42,7 @@ namespace server.Services
                 throw new InvalidOperationException("Un utilisateur avec cet email existe déjà");
 
             // Validate role exists
-            var role = _context.Roles.Find(request.RoleId);
-            if (role == null)
+            if (!Enum.IsDefined(typeof(UserRole), request.Role))
                 throw new InvalidOperationException("Le rôle spécifié n'existe pas");
 
             // Create new user
@@ -53,7 +51,7 @@ namespace server.Services
                 Nom = request.Nom,
                 Email = request.Email,
                 MotDePasseHash = PasswordHelper.HashPassword(request.MotDePasse),
-                RoleId = request.RoleId,
+                Role = request.Role, // Use enum directly
                 TwoFactorEnabled = false
             };
 
