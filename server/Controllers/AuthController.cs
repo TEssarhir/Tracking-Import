@@ -28,5 +28,23 @@ namespace server.Controllers
                 return Unauthorized("Email ou mot de passe incorrect");
             }
         }
+
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] RegisterRequest request)
+        {
+            try
+            {
+                _authService.Register(request);
+                return Ok(new { message = "Utilisateur enregistré avec succès" });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { message = "Une erreur s'est produite lors de l'enregistrement de l'utilisateur" });
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using server.Data;
 using server.DTOs;
 using server.Helpers;
+using server.Models;
 
 namespace server.Services
 {
@@ -33,6 +34,31 @@ namespace server.Services
                 Nom = user.Nom ?? string.Empty,
                 Role = user.Role?.Nom ?? string.Empty,
             };
+        }
+
+        public void Register(RegisterRequest request)
+        {
+            // Check if email already exists
+            if (_context.Utilisateurs.Any(u => u.Email == request.Email))
+                throw new InvalidOperationException("Un utilisateur avec cet email existe déjà");
+
+            // Validate role exists
+            var role = _context.Roles.Find(request.RoleId);
+            if (role == null)
+                throw new InvalidOperationException("Le rôle spécifié n'existe pas");
+
+            // Create new user
+            var user = new Utilisateur
+            {
+                Nom = request.Nom,
+                Email = request.Email,
+                MotDePasseHash = PasswordHelper.HashPassword(request.MotDePasse),
+                RoleId = request.RoleId,
+                TwoFactorEnabled = false
+            };
+
+            _context.Utilisateurs.Add(user);
+            _context.SaveChanges();
         }
     }
 }
