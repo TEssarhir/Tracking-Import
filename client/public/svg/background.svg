@@ -1,0 +1,88 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="1440" height="900" fill="#f8fafc" />
+
+  <!-- Abstract flowing shapes -->
+  <path d="M-200 352C-200 352 114 292 288 520C462 748 898 808 1050 664C1202 520 1418 352 1582 376C1746 400 1600 664 1600 664V1000H-200V352Z" fill="url(#paint0_linear)" opacity="0.05" />
+
+  <path d="M-200 500C-200 500 40 340 200 460C360 580 560 680 800 600C1040 520 1200 400 1400 500C1600 600 1600 1000 1600 1000H-200V500Z" fill="url(#paint1_linear)" opacity="0.07" />
+
+  <!-- Floating blobs -->
+  <circle cx="200" cy="250" r="80" fill="url(#paint2_radial)" opacity="0.1" />
+  <circle cx="1200" cy="350" r="120" fill="url(#paint3_radial)" opacity="0.08" />
+  <circle cx="600" cy="650" r="150" fill="url(#paint4_radial)" opacity="0.06" />
+
+  <!-- Geometric patterns -->
+  <circle cx="400" cy="200" r="6" fill="#6366f1" opacity="0.2" />
+  <circle cx="420" cy="220" r="3" fill="#6366f1" opacity="0.3" />
+  <circle cx="380" cy="230" r="4" fill="#6366f1" opacity="0.2" />
+
+  <circle cx="1100" cy="700" r="6" fill="#ec4899" opacity="0.2" />
+  <circle cx="1120" cy="720" r="3" fill="#ec4899" opacity="0.3" />
+  <circle cx="1080" cy="730" r="4" fill="#ec4899" opacity="0.2" />
+
+  <circle cx="800" cy="200" r="6" fill="#14b8a6" opacity="0.2" />
+  <circle cx="820" cy="220" r="3" fill="#14b8a6" opacity="0.3" />
+  <circle cx="780" cy="230" r="4" fill="#14b8a6" opacity="0.2" />
+
+  <!-- Abstract lines -->
+  <path d="M0 300 Q 200 350, 400 300 T 800 350 T 1200 300 T 1600 350" stroke="#6366f1" stroke-width="1" opacity="0.07" fill="none" />
+  <path d="M0 350 Q 200 400, 400 350 T 800 400 T 1200 350 T 1600 400" stroke="#ec4899" stroke-width="1" opacity="0.07" fill="none" />
+  <path d="M0 400 Q 200 450, 400 400 T 800 450 T 1200 400 T 1600 450" stroke="#14b8a6" stroke-width="1" opacity="0.07" fill="none" />
+
+  <!-- Small scattered dots -->
+  <g opacity="0.1">
+    <!-- Multiple small dots scattered across the SVG -->
+    <circle cx="100" cy="100" r="2" fill="#6366f1" />
+    <circle cx="300" cy="150" r="1" fill="#ec4899" />
+    <circle cx="500" cy="200" r="1.5" fill="#14b8a6" />
+    <circle cx="700" cy="250" r="1" fill="#6366f1" />
+    <circle cx="900" cy="300" r="2" fill="#ec4899" />
+    <circle cx="1100" cy="150" r="1.5" fill="#14b8a6" />
+    <circle cx="1300" cy="200" r="1" fill="#6366f1" />
+    <circle cx="150" cy="350" r="1.5" fill="#ec4899" />
+    <circle cx="350" cy="400" r="2" fill="#14b8a6" />
+    <circle cx="550" cy="450" r="1" fill="#6366f1" />
+    <circle cx="750" cy="500" r="1.5" fill="#ec4899" />
+    <circle cx="950" cy="550" r="1" fill="#14b8a6" />
+    <circle cx="1150" cy="600" r="2" fill="#6366f1" />
+    <circle cx="1350" cy="650" r="1.5" fill="#ec4899" />
+    <circle cx="200" cy="700" r="1" fill="#14b8a6" />
+    <circle cx="400" cy="750" r="1.5" fill="#6366f1" />
+    <circle cx="600" cy="800" r="2" fill="#ec4899" />
+    <circle cx="800" cy="850" r="1" fill="#14b8a6" />
+    <circle cx="1000" cy="800" r="1.5" fill="#6366f1" />
+    <circle cx="1200" cy="750" r="1" fill="#ec4899" />
+    <circle cx="1400" cy="700" r="2" fill="#14b8a6" />
+  </g>
+
+  <!-- Gradients definitions -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1" />
+      <stop offset="0.5" stop-color="#ec4899" />
+      <stop offset="1" stop-color="#14b8a6" />
+    </linearGradient>
+
+    <linearGradient id="paint1_linear" x1="1440" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14b8a6" />
+      <stop offset="0.5" stop-color="#6366f1" />
+      <stop offset="1" stop-color="#ec4899" />
+    </linearGradient>
+
+    <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(200 250) rotate(90) scale(100)">
+      <stop offset="0" stop-color="#6366f1" />
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="paint3_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1200 350) rotate(90) scale(150)">
+      <stop offset="0" stop-color="#ec4899" />
+      <stop offset="1" stop-color="#ec4899" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="paint4_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 650) rotate(90) scale(180)">
+      <stop offset="0" stop-color="#14b8a6" />
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>
