@@ -1,6 +1,25 @@
 @server_HostAddress = http://localhost:5010
 
-GET {{server_HostAddress}}/weatherforecast/
+### Test API Status
+GET http://localhost:5010/api/status
 Accept: application/json
 
-###
+### Login
+POST http://localhost:5010/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "motDePasse": "Admin123!"
+}
+
+### Register #! to add roles
+POST http://localhost:5010/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "newuser@example.com",
+  "motDePasse": "Password123!",
+  "nom": "Titi",
+  "role": 1
+}

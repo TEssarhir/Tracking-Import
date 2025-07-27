@@ -2,6 +2,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace server.Models
 {
+    public enum UserRole
+    {
+        Admin,
+        Fournisseur,
+        Transitaire,
+        Transporteur,
+        Client
+    }
+
     public class Utilisateur
     {
         [Key]
@@ -15,7 +24,6 @@ namespace server.Models
 
         public bool TwoFactorEnabled { get; set; }
 
-        public int RoleId { get; set; }
-        public Role? Role { get; set; }
+        public UserRole Role { get; set; }
     }
 }
