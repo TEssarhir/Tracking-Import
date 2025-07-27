@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using server.Data;
 using server.DTOs;
 using server.Helpers;
@@ -18,9 +19,10 @@ namespace server.Services
         public LoginResponse Login(LoginRequest request)
         {
             var user = _context.Utilisateurs
+                .Include(u => u.Role)
                 .FirstOrDefault(u => u.Email == request.Email);
 
-            if (user == null || user.MotDePasseHash != request.MotDePasse)
+            if (user == null || user.MotDePasseHash == null || !PasswordHelper.VerifyPassword(user.MotDePasseHash, request.MotDePasse))
                 throw new UnauthorizedAccessException("Identifiants invalides");
 
             var token = JwtHelper.GenerateJwtToken(user, _config["Jwt:Key"] ?? string.Empty);

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using server.Models;
+using server.Helpers;
 
 namespace server.Data
 {
@@ -33,9 +34,9 @@ namespace server.Data
                 {
                     Nom = "Alice Admin",
                     Email = "admin@example.com",
-                    MotDePasseHash = "hashed-password", // remplace par un hash réel
+                    MotDePasseHash = PasswordHelper.HashPassword("Admin123!"), // For testing the hashing
                     RoleId = 1,
-                    TwoFactorEnabled = true
+                    TwoFactorEnabled = false // No 2FA for now
                 });
                 context.SaveChanges();
             }
