@@ -1,4 +1,9 @@
-.DS_Store
-/bin
-/obj
-/node_modules
+*.DS_Store
+
+# dotnet folders
+bin/
+obj/
+
+# npm folders
+build/
+node_modules/
