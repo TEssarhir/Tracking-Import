@@ -24,6 +24,10 @@ namespace server.Data
                 .HasConversion<string>();
 
             modelBuilder.Entity<Utilisateur>()
+                .Property(u => u.Gender)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Utilisateur>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
