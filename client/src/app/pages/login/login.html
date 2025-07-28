@@ -59,5 +59,11 @@
     <div class="register-prompt">
       <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
     </div>
+
+    @if (errorMessage) {
+      <div class="error-alert">
+        {{ errorMessage }}
+      </div>
+    }
   </div>
 </div>

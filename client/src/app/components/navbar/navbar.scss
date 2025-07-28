@@ -400,3 +400,20 @@
     }
   }
 }
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  text-align: right;
+
+  .user-name {
+    font-weight: 600;
+    color: var(--gray-800);
+  }
+
+  .user-role {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+  }
+}

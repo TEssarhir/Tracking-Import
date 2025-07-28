@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '@services/auth';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +16,12 @@ export class Login implements OnInit {
   loginForm!: FormGroup;
   loading = false;
   submitted = false;
+  errorMessage = '';
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +39,7 @@ export class Login implements OnInit {
 
   onSubmit(): void {
     this.submitted = true;
+    this.errorMessage = '';
 
     // Stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -43,11 +48,23 @@ export class Login implements OnInit {
 
     this.loading = true;
 
-    // Mock login - in a real app, you would call your auth service here
-    setTimeout(() => {
-      console.log('Login credentials:', this.loginForm.value);
-      this.loading = false;
-      this.router.navigate(['/dashboard']);
-    }, 1500);
+    this.authService.login(
+      this.loginForm.value.email,
+      this.loginForm.value.password
+    ).subscribe({
+      next: () => {
+        this.loading = false;
+        this.router.navigate(['/']);
+      },
+      error: (error: HttpErrorResponse) => {
+        this.loading = false;
+        if (error.status === 401) {
+          this.errorMessage = 'Email ou mot de passe incorrect';
+        } else {
+          this.errorMessage = 'Une erreur est survenue lors de la connexion';
+        }
+        console.error('Login error:', error);
+      }
+    });
   }
 }
