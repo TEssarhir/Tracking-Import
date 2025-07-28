@@ -1,27 +1,44 @@
 <nav class="app-navbar">
-  <div class="navbar-container">
+  <div class="container">
     <div class="navbar-logo">
-      <a routerLink="/"><img src="svg/logo.svg" alt="Logo"></a>
+      <a routerLink="/">
+        <img src="svg/logo.svg" alt="Tracking Import">
+        <span>Tracking Import</span>
+      </a>
     </div>
-    @if (currentRoute === "/" || currentRoute === "/login") {
+
+    <div class="navbar-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="navbar-menu">
       <ul class="navbar-links">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="#">About</a></li>
-        <li><a routerLink="#">Services</a></li>
-        <li><a routerLink="#">Contact</a></li>
+        <li><a routerLink="/" [class.active]="currentRoute === '/'">Home</a></li>
+        <li><a routerLink="/features">Features</a></li>
+        <li><a routerLink="/pricing">Pricing</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
       </ul>
-    }
-    <div class="navbar-actions">
-      @if (!currentUser) {
-        <button class="btn btn-primary" routerLink="/login">Login</button>
-        <button class="btn btn-secondary" routerLink="/register">Register</button>
-      } @else {
-        <div class="user-info">
-          <span class="user-name">{{ currentUser.prenom }} {{ currentUser.nom }}</span>
-          <span class="user-role">{{ getUserRoleText(currentUser.role) }}</span>
-        </div>
-        <button class="btn btn-primary" (click)="logout()">Logout</button>
-      }
+
+      <div class="navbar-actions">
+        @if (!currentUser) {
+          <a routerLink="/login" class="btn btn-glass">Login</a>
+          <a routerLink="/register" class="btn btn-primary">Get Started</a>
+        } @else {
+          <div class="user-profile">
+            <div class="user-avatar">{{ currentUser.prenom.charAt(0) }}{{ currentUser.nom.charAt(0) }}</div>
+            <div class="user-info">
+              <span class="user-name">{{ currentUser.prenom }} {{ currentUser.nom }}</span>
+              <span class="user-role">{{ getUserRoleText(currentUser.role) }}</span>
+            </div>
+          </div>
+          <button class="btn btn-glass" (click)="logout()">
+            <span class="icon-logout"></span>
+            Logout
+          </button>
+        }
+      </div>
     </div>
   </div>
 </nav>
