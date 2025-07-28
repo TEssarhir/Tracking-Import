@@ -1,195 +1,167 @@
-<div class="home-page">
-  <!-- Hero Section -->
-  <section class="hero bg-gradient-primary">
-    <div class="container py-5">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h1 class="display-1 text-white mb-3 animate-fade-in">Streamlined Import Tracking</h1>
-          <p class="lead text-white mb-4 animate-slide-up">Take control of your import operations with our powerful tracking and management solution.</p>
-          <div class="d-flex gap-3 animate-slide-up" style="animation-delay: 0.2s">
-            <button class="btn btn-light btn-lg" (click)="navigateToRegister()">Get Started</button>
-            <button class="btn btn-outline btn-lg text-white" (click)="openDemoVideo()">Watch Demo</button>
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="animate-fade-in">Streamline Your <span class="text-gradient-primary">Import Tracking</span></h1>
+      <p class="hero-subtitle animate-slide-up">Powerful management solution for modern businesses to track, monitor, and optimize import operations</p>
+      <div class="hero-buttons animate-slide-up">
+        <button class="btn btn-primary" (click)="navigateToRegister()">Get Started</button>
+        <button class="btn btn-glass" (click)="openDemoVideo()">
+          <span class="play-icon"></span>
+          Watch Demo
+        </button>
+      </div>
+    </div>
+    <div class="hero-image animate-fade-in">
+      <img src="svg/hero-dashboard.svg" alt="Dashboard Preview">
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" data-count="5000">0</span>
+        <p>Shipments Managed</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="40">0</span>
+        <p>Time Saved</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="99">0</span>
+        <p>Customer Satisfaction</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="24">0</span>
+        <p>Countries Served</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <h2 class="section-title">Powerful <span class="text-gradient-purple-pink">Features</span></h2>
+    <p class="section-subtitle">Everything you need to manage your import operations efficiently</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="svg/track-icon.svg" alt="Tracking Icon">
+        </div>
+        <h3>Real-Time Tracking</h3>
+        <p>Monitor all your shipments in real-time with precise location data and status updates</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="svg/import-icon.svg" alt="Import Icon">
+        </div>
+        <h3>Smart Import Management</h3>
+        <p>Streamline document processing and customs clearance with our intelligent system</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="svg/analytics-icon.svg" alt="Analytics Icon">
+        </div>
+        <h3>Advanced Analytics</h3>
+        <p>Gain valuable insights with comprehensive reports and performance metrics</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="svg/notification-icon.svg" alt="Notification Icon">
+        </div>
+        <h3>Automated Notifications</h3>
+        <p>Stay informed with customizable alerts for important updates and potential issues</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="workflow-section">
+  <div class="container">
+    <div class="workflow-content">
+      <h2>Simplified <span class="text-gradient-primary">Workflow</span></h2>
+      <p class="workflow-description">Our platform streamlines the entire import process from order to delivery</p>
+
+      <div class="workflow-steps">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <h3>Create Order</h3>
+          <p>Quickly set up new import orders with all necessary details</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <h3>Track Progress</h3>
+          <p>Monitor real-time status updates throughout the shipping journey</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <h3>Manage Documentation</h3>
+          <p>Handle all required paperwork in one centralized location</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">4</div>
+          <h3>Complete Delivery</h3>
+          <p>Finalize the process with seamless delivery confirmation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="workflow-image">
+      <img src="svg/workflow-diagram.svg" alt="Workflow Diagram">
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">What Our <span class="text-gradient-primary">Clients Say</span></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"Tracking Import has revolutionized how we manage our international shipments. The real-time tracking and automated alerts have significantly reduced our operational overhead."</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="svg/client1.svg" alt="Client Avatar">
+          <div class="author-info">
+            <h4>Sarah Johnson</h4>
+            <p>Logistics Manager, Global Trade Inc.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"The analytics features provide invaluable insights that have helped us optimize our supply chain and reduce costs by over 30% in just six months."</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="svg/client2.svg" alt="Client Avatar">
+          <div class="author-info">
+            <h4>Michael Chen</h4>
+            <p>Supply Chain Director, Tech Solutions</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="bg-dots"></div>
-  </section>
+  </div>
+</section>
 
-  <!-- Features Section -->
-  <section class="py-5">
-    <div class="container py-4">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">Powerful Features</h2>
-        <p class="lead text-secondary mx-auto" style="max-width: 700px">Everything you need to track, manage, and optimize your import operations in one place.</p>
-      </div>
-
-      <div class="grid grid-cols-1 grid-cols-md-3 gap-4">
-        <!-- Feature 1 -->
-        <div class="card card-hover-lift card-primary">
-          <div class="card-body text-center">
-            <div class="display-4 text-primary mb-3">
-              <i class="icon-chart"></i>
-            </div>
-            <h3 class="card-title">Real-time Tracking</h3>
-            <p class="card-text">Monitor all your imports in real-time with detailed status updates and location data.</p>
-          </div>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="card card-hover-lift card-secondary">
-          <div class="card-body text-center">
-            <div class="display-4 text-secondary mb-3">
-              <i class="icon-document"></i>
-            </div>
-            <h3 class="card-title">Document Management</h3>
-            <p class="card-text">Centralize all your import documentation for easy access and management.</p>
-          </div>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="card card-hover-lift card-accent">
-          <div class="card-body text-center">
-            <div class="display-4 text-accent mb-3">
-              <i class="icon-bell"></i>
-            </div>
-            <h3 class="card-title">Smart Notifications</h3>
-            <p class="card-text">Get alerted about delays, status changes, and other critical updates automatically.</p>
-          </div>
-        </div>
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <h2>Ready to Transform Your Import Operations?</h2>
+      <p>Join thousands of businesses already benefiting from our platform</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary" (click)="navigateToRegister()">Start Free Trial</button>
+        <button class="btn btn-secondary" (click)="contactSales()">Contact Sales</button>
       </div>
     </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="bg-gradient-cool py-5">
-    <div class="container py-4">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">How It Works</h2>
-        <p class="lead mx-auto" style="max-width: 700px">Our streamlined process makes import tracking simple and efficient.</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <div class="card bg-glass">
-            <div class="card-body p-4">
-              <div class="d-flex flex-column flex-md-row gap-4">
-                <!-- Step 1 -->
-                <div class="text-center flex-fill">
-                  <div class="badge badge-pill badge-primary mb-3">1</div>
-                  <h4>Connect</h4>
-                  <p class="mb-0">Integrate with your existing systems and data sources.</p>
-                </div>
-
-                <!-- Divider -->
-                <div class="d-none d-md-block align-self-center">
-                  <div class="divider-gradient" style="width: 50px; height: 2px;"></div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="text-center flex-fill">
-                  <div class="badge badge-pill badge-primary mb-3">2</div>
-                  <h4>Track</h4>
-                  <p class="mb-0">Monitor all imports in real-time on a centralized dashboard.</p>
-                </div>
-
-                <!-- Divider -->
-                <div class="d-none d-md-block align-self-center">
-                  <div class="divider-gradient" style="width: 50px; height: 2px;"></div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="text-center flex-fill">
-                  <div class="badge badge-pill badge-primary mb-3">3</div>
-                  <h4>Optimize</h4>
-                  <p class="mb-0">Use insights and analytics to improve your import operations.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="py-5">
-    <div class="container py-4">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div class="card card-shiny">
-            <div class="card-body p-5">
-              <div class="row text-center">
-                <!-- Stat 1 -->
-                <div class="col-sm-4 mb-4 mb-sm-0">
-                  <h2 class="display-2 text-gradient text-gradient-primary mb-2" data-count="98">0</h2>
-                  <p class="text-secondary">Accuracy Rate</p>
-                </div>
-
-                <!-- Stat 2 -->
-                <div class="col-sm-4 mb-4 mb-sm-0">
-                  <h2 class="display-2 text-gradient text-gradient-secondary mb-2" data-count="40">0</h2>
-                  <p class="text-secondary">Time Saved</p>
-                </div>
-
-                <!-- Stat 3 -->
-                <div class="col-sm-4">
-                  <h2 class="display-2 text-gradient text-gradient-accent mb-2" data-count="5000">0</h2>
-                  <p class="text-secondary">Shipments Tracked</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial Section -->
-  <section class="bg-neutral-100 py-5">
-    <div class="container py-4">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">What Our Clients Say</h2>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card card-hover-zoom mb-4">
-            <div class="card-body p-4">
-              <div class="d-flex">
-                <div class="flex-shrink-0 me-4">
-                  <div class="avatar" style="width: 60px; height: 60px; background-color: var(--primary-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <span style="font-weight: bold; color: var(--primary-700);">JD</span>
-                  </div>
-                </div>
-                <div>
-                  <p class="lead mb-2">"This platform has completely transformed how we manage imports. The real-time tracking and automated alerts have reduced our processing time by 35%."</p>
-                  <div class="d-flex align-items-center">
-                    <strong class="me-2">Jane Doe</strong>
-                    <span class="text-secondary">Import Manager, Global Logistics Inc.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-5 bg-gradient-primary text-white text-center">
-    <div class="container py-4">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="mb-4">Ready to transform your import tracking?</h2>
-          <p class="lead mb-4">Join thousands of businesses that have optimized their import operations.</p>
-          <div class="d-flex gap-3 justify-content-center">
-            <button class="btn btn-light btn-lg" (click)="navigateToRegister()">Get Started</button>
-            <button class="btn btn-outline btn-lg text-white" (click)="contactSales()">Contact Sales</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+  </div>
+</section>
