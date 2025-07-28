@@ -31,6 +31,8 @@ namespace server.Services
             {
                 Token = token,
                 Nom = user.Nom ?? string.Empty,
+                Prenom = user.Prenom ?? string.Empty,
+                Gender = user.Gender,
                 Role = user.Role,
             };
         }
@@ -49,6 +51,8 @@ namespace server.Services
             var user = new Utilisateur
             {
                 Nom = request.Nom,
+                Prenom = request.Prenom,
+                Gender = request.Gender,
                 Email = request.Email,
                 MotDePasseHash = PasswordHelper.HashPassword(request.MotDePasse),
                 Role = request.Role, // Use enum directly

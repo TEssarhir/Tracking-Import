@@ -19,9 +19,11 @@ namespace server.Data
             {
                 context.Utilisateurs.Add(new Utilisateur
                 {
-                    Nom = "Alice Admin",
-                    Email = "admin@example.com",
-                    MotDePasseHash = PasswordHelper.HashPassword("Admin123!"),
+                    Prenom = "Yaya",
+                    Nom = "Lghzala",
+                    Gender = UserGender.F,
+                    Email = "yaya@example.com",
+                    MotDePasseHash = PasswordHelper.HashPassword("Yaya123!"),
                     Role = UserRole.Admin, // Use enum value directly
                     TwoFactorEnabled = false // No 2FA for now
                 });

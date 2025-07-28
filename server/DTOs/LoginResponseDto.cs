@@ -6,6 +6,8 @@ namespace server.DTOs
     {
         public required string Token { get; set; }
         public required string Nom { get; set; }
+        public required string Prenom { get; set; }
+        public UserGender Gender { get; set; }
         public UserRole Role { get; set; }
     }
 }

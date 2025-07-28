@@ -18,6 +18,8 @@ namespace server.Helpers
                 new Claim(JwtRegisteredClaimNames.Sub, user.UtilisateurId.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty),
                 new Claim(ClaimTypes.Name, user.Nom ?? string.Empty),
+                new Claim(ClaimTypes.Surname, user.Prenom ?? string.Empty),
+                new Claim(ClaimTypes.Gender, user.Gender.ToString()),
                 new Claim(ClaimTypes.Role, user.Role.ToString()),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };

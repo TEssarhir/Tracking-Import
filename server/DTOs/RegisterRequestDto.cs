@@ -9,6 +9,12 @@ namespace server.DTOs
         public string Nom { get; set; } = string.Empty;
 
         [Required]
+        public string Prenom { get; set; } = string.Empty;
+
+        [Required]
+        public UserGender Gender { get; set; }
+
+        [Required]
         [EmailAddress]
         public string Email { get; set; } = string.Empty;
 

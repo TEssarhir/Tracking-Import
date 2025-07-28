@@ -11,12 +11,22 @@ namespace server.Models
         Client
     }
 
+    public enum UserGender
+    {
+        M,
+        F,
+    }
+
     public class Utilisateur
     {
         [Key]
         public int UtilisateurId { get; set; }
 
         public string? Nom { get; set; }
+
+        public string? Prenom { get; set; }
+
+        public UserGender Gender { get; set; }
 
         public string? Email { get; set; }
 
