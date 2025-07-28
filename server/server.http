@@ -9,17 +9,19 @@ POST http://localhost:5010/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "admin@example.com",
-  "motDePasse": "Admin123!"
+  "email": "yaya@example.com",
+  "motDePasse": "Yaya123!"
 }
 
-### Register #! to add roles
+### Register
 POST http://localhost:5010/api/auth/register
 Content-Type: application/json
 
 {
-  "email": "newuser@example.com",
-  "motDePasse": "Password123!",
-  "nom": "Titi",
-  "role": 1
+  "email": "titi@example.com",
+  "motDePasse": "Titi123!",
+  "prenom": "Titi",
+  "nom": "Lkhayb",
+  "gender": 0,
+  "role": 4
 }
